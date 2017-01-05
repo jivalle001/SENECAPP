@@ -1,0 +1,18 @@
+<resources>
+    <string-array name="idiomas">
+        <item>@string/str_es</item>
+        <item>@string/str_eu</item>
+    </string-array>
+    <string name="str_button">Aldatu Hizkuntza</string>
+    <string name="passwordText">Pasahitza</string>
+    <string name="loginButtonText">Sartu</string>
+    <string name="registerButtonText">Erregistratu</string>
+    <string name="userText">Erabiltzailearen izena</string>
+    <string name="loginMenuButtonText">Saioa hasi</string>
+    <string name="registerMenuButtonText">Erregistratu</string>
+    <string name="confirmPassText">Pasahitza baieztatu</string>
+    <string name="continueButtonText">Jarraitu</string>
+    <string name="nameText">Izena</string>
+    <string name="surname1Text">Lehenengo abizena</string>
+    <string name="surname2Text">Bigarren abizena</string>
+</resources>

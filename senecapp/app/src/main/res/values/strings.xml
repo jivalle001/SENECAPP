@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name" translatable="false">Senecapp</string>
+    <string name="str_es" translatable="false">Castellano</string>
+    <string name="str_eu" translatable="false">Euskara</string>
+    <string-array name="idiomas">
+        <item>@string/str_es</item>
+        <item>@string/str_eu</item>
+    </string-array>
+    <string name="hombre1">chico1</string>
+    <string name="hombre2">chico1</string>
+    <string name="hombre3">chico1</string>
+    <string name="hombre4">chico1</string>
+    <string-array name="hombres">
+        <item>@string/hombre1</item>
+        <item>@string/hombre2</item>
+        <item>@string/hombre3</item>
+        <item>@string/hombre4</item>
+    </string-array>
+
+    <!--MainActivity-->
+    <string name="str_button">Cambiar Idioma</string>
+    <string name="castellanoButton" translatable="false">CASTELLANO</string>
+    <string name="euskaraButton" translatable="false">EUSKARA</string>
+    <string name="title_activity_login" translatable="false">Log in</string>
+
+    <!--LoginMenuActivity-->
+    <string name="loginMenuButtonText">Iniciar sesión</string>
+    <string name="registerMenuButtonText">Registarse</string>
+
+    <!--LoginActivity-->
+    <string name="userText">Nombre de usuario</string>
+    <string name="passwordText">Contraseña</string>
+    <string name="loginButtonText">Entrar</string>
+    <string name="registerButtonText">Registrarse</string>
+
+    <!--RegisterActivity-->
+    <string name="nameText">Nombre</string>
+    <string name="surname1Text">Primer apellido</string>
+    <string name="surname2Text">Segundo apellido</string>
+    <string name="confirmPassText">Confirmar contraseña</string>
+    <string name="continueButtonText">Seguir</string>
+</resources>
