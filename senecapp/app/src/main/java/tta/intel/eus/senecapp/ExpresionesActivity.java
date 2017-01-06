@@ -1,7 +1,9 @@
 package tta.intel.eus.senecapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class ExpresionesActivity extends AppCompatActivity {
 
@@ -9,5 +11,10 @@ public class ExpresionesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones);
+    }
+
+    public void expresiones1(View view){
+        Intent intent = new Intent(this,Expresiones1Activity.class);
+        startActivity(intent);
     }
 }

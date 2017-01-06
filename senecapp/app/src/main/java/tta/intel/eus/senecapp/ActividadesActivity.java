@@ -17,4 +17,9 @@ public class ActividadesActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Juego1Activity.class);
         startActivity(intent);
     }
+
+    public void juego2(View view){
+        Intent intent = new Intent(this,Juego2Activity.class);
+        startActivity(intent);
+    }
 }
