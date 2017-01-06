@@ -6,10 +6,10 @@
         <item>@string/str_es</item>
         <item>@string/str_eu</item>
     </string-array>
-    <string name="hombre1">chico1</string>
-    <string name="hombre2">chico1</string>
-    <string name="hombre3">chico1</string>
-    <string name="hombre4">chico1</string>
+    <string name="hombre1" translatable="false">chico1</string>
+    <string name="hombre2" translatable="false">chico1</string>
+    <string name="hombre3" translatable="false">chico1</string>
+    <string name="hombre4" translatable="false">chico1</string>
     <string-array name="hombres">
         <item>@string/hombre1</item>
         <item>@string/hombre2</item>

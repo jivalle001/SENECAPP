@@ -3,6 +3,7 @@ package tta.intel.eus.senecapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -30,53 +31,81 @@ public class Register2HombreActivity extends AppCompatActivity {
 
     View.OnClickListener myhandler1 = new View.OnClickListener(){
         public void onClick(View view){
-            SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             ImageView imageView = (ImageView) view;
             int imageId = R.drawable.chico1;
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("avatar",imageId);
             editor.commit();
-            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-            startActivity(intent);
+            boolean cambio = sharedPreferences.getBoolean("cambio",false);
+            if(cambio!=true) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+            }
         }
     };
 
     View.OnClickListener myhandler2 = new View.OnClickListener(){
         public void onClick(View view){
-            SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             ImageView imageView = (ImageView) view;
             int imageId = R.drawable.chico1;
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("avatar",imageId);
             editor.commit();
-            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-            startActivity(intent);
+            boolean cambio = sharedPreferences.getBoolean("cambio",false);
+            if(cambio!=true) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+            }
         }
     };
 
     View.OnClickListener myhandler3 = new View.OnClickListener(){
         public void onClick(View view){
-            SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             ImageView imageView = (ImageView) view;
             int imageId = R.drawable.chico1;
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("avatar",imageId);
             editor.commit();
-            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-            startActivity(intent);
+            boolean cambio = sharedPreferences.getBoolean("cambio",false);
+            if(cambio!=true) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+            }
         }
     };
 
     View.OnClickListener myhandler4 = new View.OnClickListener(){
         public void onClick(View view){
-            SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             ImageView imageView = (ImageView) view;
             int imageId = R.drawable.chico1;
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("avatar",imageId);
             editor.commit();
-            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-            startActivity(intent);
+            boolean cambio = sharedPreferences.getBoolean("cambio",false);
+            if(cambio!=true) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+            }
         }
     };
 

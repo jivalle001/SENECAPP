@@ -24,10 +24,10 @@
         android:layout_height="450dp"
         android:id="@+id/mujer"
         android:src="@drawable/chica1"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="mujer"/>
+        android:onClick="mujer"
+        android:layout_below="@+id/progressBar3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,10 +35,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Hombre"
         android:id="@+id/hombreText"
-        android:layout_below="@+id/mujer"
+        android:textAlignment="center"
+        android:layout_alignTop="@+id/mujer"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textAlignment="center"
+        android:layout_marginTop="138dp"
         android:layout_alignRight="@+id/hombre"
         android:layout_alignEnd="@+id/hombre" />
 
@@ -48,11 +49,25 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Mujer"
         android:id="@+id/mujerText"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/hombreText"
         android:layout_alignLeft="@+id/mujer"
         android:layout_alignStart="@+id/mujer"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/hombreText" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:max="100"
+        android:progress="66"
+        android:indeterminate="false" />
 </RelativeLayout>

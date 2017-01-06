@@ -27,7 +27,12 @@
         <activity android:name=".Register2MenuActivity" />
         <activity android:name=".Register2HombreActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".Register2MujerActivity"></activity>
+        <activity android:name=".Register2MujerActivity" />
+        <activity android:name=".ActividadesActivity" />
+        <activity android:name=".ExpresionesActivity" />
+        <activity android:name=".MapasActivity" />
+        <activity android:name=".AjustesActivity" />
+        <activity android:name=".Juego1Activity"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/loginUser"
-        android:text="@string/userText"
+        android:hint="@string/userText"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -45,7 +45,7 @@
         android:ems="10"
         android:id="@+id/loginPassword"
         android:layout_alignParentStart="true"
-        android:text="@string/passwordText"
+        android:hint="@string/passwordText"
         android:layout_below="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true" />

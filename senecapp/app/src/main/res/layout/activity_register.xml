@@ -20,7 +20,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/name"
         android:hint="@string/nameText"
@@ -39,7 +39,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/surname1"
         android:hint="@string/surname1Text"
@@ -58,11 +58,11 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/surname2"
         android:hint="@string/surname2Text"
-        android:layout_above="@+id/usernameText"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -72,18 +72,18 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/userText"
         android:id="@+id/usernameText"
-        android:layout_above="@+id/username"
+        android:layout_below="@+id/surname2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:hint="@string/userText"
-        android:layout_above="@+id/passText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/usernameText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,35 +91,17 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/passwordText"
         android:id="@+id/passText"
-        android:layout_above="@+id/pass"
+        android:layout_below="@+id/username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pass"
         android:hint="@string/passwordText"
-        android:layout_above="@+id/confirmPassText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/confirmPassText"
-        android:id="@+id/confirmPassText"
-        android:layout_above="@+id/confirmPass"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/confirmPass"
-        android:hint="@string/confirmPassText"
-        android:layout_above="@+id/continueButton"
+        android:inputType="textPassword"
+        android:layout_below="@+id/passText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -128,12 +110,13 @@
         android:layout_height="wrap_content"
         android:text="@string/continueButtonText"
         android:id="@+id/continueButton"
-        android:layout_alignParentBottom="true"
+        android:onClick="seguir"
+        android:layout_below="@+id/pass"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/progressBar"
-        android:layout_alignEnd="@+id/progressBar"
-        android:onClick="seguir"/>
+        android:layout_marginTop="36dp"
+        android:layout_alignRight="@+id/pass"
+        android:layout_alignEnd="@+id/pass" />
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
@@ -147,7 +130,6 @@
         android:layout_alignParentStart="true"
         android:max="100"
         android:progress="33"
-        android:indeterminate="false"
-        android:layout_above="@+id/nameText" />
+        android:indeterminate="false" />
 
 </RelativeLayout>
