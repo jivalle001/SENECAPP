@@ -9,4 +9,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tta.intel.eus.senecapp.MapasActivity">
 
+    <ExpandableListView
+        android:id="@+id/expandable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorAccent"
+        android:dividerHeight="1dp"
+        android:indicatorLeft=
+            "?android:attr/expandableListPreferredChildIndicatorLeft">
+    </ExpandableListView>
 </RelativeLayout>
