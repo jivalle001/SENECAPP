@@ -1,56 +1,104 @@
 package tta.intel.eus.senecapp;
 
-import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Expresiones1Activity extends AppCompatActivity {
 
-    private final static int AUDIO_REQUEST_CODE = 0;
+    TextView tv1;
+    MediaRecorder recorder;
+    MediaPlayer player;
+    File archivo;
+    Button b1, b2, b3;
+    private Uri archivoUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones1);
 
-        String audio = "http://u017633.ehu.eus:28080/static/ServidorTta/AndroidManifest.mp4";
+        tv1 = (TextView) this.findViewById(R.id.expresionText);
+        b1 = (Button) findViewById(R.id.grabarButton);
+        b2 = (Button) findViewById(R.id.pararButton);
+        b3 = (Button) findViewById(R.id.reproducirButton);
+    }
 
+    public void grabar(View v) {
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
         try {
-            showAudio(audio);
+           File archivo = File.createTempFile("temporal", ".3gp", path);
+            archivoUri = Uri.fromFile(archivo);
+            recorder.setOutputFile(String.valueOf(archivoUri));
+        } catch (IOException e) {
+        }
+        try{
+            recorder.start();
+        }catch (IllegalStateException e){
+
+        }
+
+        tv1.setText("Grabando");
+        b1.setEnabled(false);
+        b2.setEnabled(true);
+    }
+
+    public void detener(View v) {
+        try{
+            recorder.stop();
+        }catch (IllegalStateException e){
+
+        }
+        recorder.reset();
+        recorder.release();
+        player = new MediaPlayer();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                b1.setEnabled(true);
+                b2.setEnabled(true);
+                b3.setEnabled(true);
+                tv1.setText("Listo");
+            }
+        });
+        try {
+            player.setDataSource(String.valueOf(archivoUri));
+        } catch (IOException e) {
+        }
+        try {
+            player.prepare();
+        } catch (IllegalStateException e) {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        b1.setEnabled(true);
+        b2.setEnabled(false);
+        b3.setEnabled(true);
+        tv1.setText("Listo para reproducir");
     }
 
-    private void showAudio(String advise) throws IOException {
-        View view = new View(this);
-        AudioPlayer audio = new AudioPlayer(view);
-        audio.setAudioUri(Uri.parse(advise));
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        view.setLayoutParams(params);
+    public void reproducir(View v) {
+        try{
+            player.start();
+        }catch (IllegalStateException e){
 
-        ViewGroup layout = (ViewGroup)findViewById(R.id.expresiones_layout);
-        layout.addView(view);
-        audio.start();
-    }
-
-    public void grabarAudio(View view) {
-        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE))
-            Toast.makeText(this,"No hay microfono", Toast.LENGTH_SHORT).show();
-        else{
-            Intent intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-            if(intent.resolveActivity(getPackageManager())!=null)
-                startActivityForResult(intent,AUDIO_REQUEST_CODE);
-            else
-                Toast.makeText(this,"No hay app", Toast.LENGTH_SHORT).show();
         }
+        b1.setEnabled(false);
+        b2.setEnabled(false);
+        b3.setEnabled(false);
+        tv1.setText("Reproduciendo");
     }
 }

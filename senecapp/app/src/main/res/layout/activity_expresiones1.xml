@@ -10,44 +10,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tta.intel.eus.senecapp.Expresiones1Activity">
 
-    <LinearLayout
-        android:id="@+id/title_layout"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Non dago nire klasea?"
+        android:id="@+id/expresionText"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Expresión 1"
-            android:id="@+id/expresionTitle"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/expresiones_layout"
-        android:layout_below="@id/title_layout"></LinearLayout>
+        android:text="Grabar"
+        android:id="@+id/grabarButton"
+        android:layout_marginTop="65dp"
+        android:layout_below="@+id/expresionText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/pararButton"
+        android:layout_toStartOf="@+id/pararButton"
+        android:onClick="grabar"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/expresiones_layout">
+        android:text="Detener"
+        android:id="@+id/pararButton"
+        android:layout_alignTop="@+id/grabarButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="detener"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grabar"
-            android:id="@+id/button4"
-            android:layout_gravity="center_horizontal"
-            android:onClick="grabarAudio"/>
-    </LinearLayout>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reproducir grabación"
+        android:id="@+id/reproducirButton"
+        android:layout_below="@+id/grabarButton"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="reproducir"/>
 </RelativeLayout>
