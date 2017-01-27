@@ -39,26 +39,32 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                if(usuario.getUsuario().matches(username)){
-                    Toast.makeText(getApplicationContext(), "Usuario ya registrado", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    String un = sharedPreferences.getString("username",null);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("cambio",false);
-                    editor.commit();
+                try {
+                    if(usuario!=null){
+                        if(usuario.getUsuario().matches(username))
+                            Toast.makeText(getApplicationContext(), "Usuario ya registrado", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        String un = sharedPreferences.getString("username",null);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("cambio",false);
+                        editor.commit();
 
-                    Bundle bundle = new Bundle();
-                    bundle.putString("apellido1",surname1);
-                    bundle.putString("apellido2",surname2);
-                    bundle.putString("pass",pass);
-                    bundle.putString("name",name);
-                    bundle.putString("username",username);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("apellido1",surname1);
+                        bundle.putString("apellido2",surname2);
+                        bundle.putString("pass",pass);
+                        bundle.putString("name",name);
+                        bundle.putString("username",username);
 
-                    Intent intent = new Intent(getApplicationContext(),Register2MenuActivity.class);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(),Register2MenuActivity.class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+                }catch (Exception e)
+                {
+                    e.printStackTrace();
                 }
             }
         }.execute();
