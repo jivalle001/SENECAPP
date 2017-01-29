@@ -7,85 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tta.intel.eus.senecapp.Juego1Activity">
+    tools:context="tta.intel.eus.senecapp.Juego1Activity"
+    android:id="@+id/juego1Layout">
 
-    <!--<TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/TableLayout03">
-        <TableRow
-            android:id="@+id/TableRow04"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <Spinner
-                android:id="@+id/Spinner01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"></Spinner>
-        </TableRow>
-        <TableRow
-            android:id="@+id/TableRow05"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv1"
-                android:paddingLeft="10sp"
-                android:layout_weight="1"/>
-        </TableRow>
-        <TableRow
-            android:id="@+id/TableRow01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Memory Game"
-                android:visibility="visible"
-                android:textSize="30sp"
-                android:paddingTop="20sp"
-                android:textColor="#EEFFAA"
-                android:id="@+id/mainTitle"/>
-        </TableRow>
-        <TableRow
-            android:id="@+id/TableRow02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:typeface="normal"
-                android:bufferType="normal"
-                android:textColor="#FFEEAA" />
-        </TableRow>
-        <TableRow
-            android:id="@+id/TableRow03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <LinearLayout
-                android:id="@+id/LinearLayout01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ImageView01"
-                    android:background="@drawable/chico1"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
-        </TableRow>
-    </TableLayout>-->
 
     <ImageView
         android:layout_width="150dp"
@@ -144,4 +68,17 @@
         android:layout_alignTop="@+id/imageView3"
         android:layout_toRightOf="@+id/imageView3"
         android:layout_toEndOf="@+id/imageView3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:id="@+id/buttonSiguiente"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="siguienteJuego"
+        android:visibility="invisible"/>
 </RelativeLayout>

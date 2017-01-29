@@ -30,5 +30,6 @@
         android:layout_alignRight="@+id/juego1Button"
         android:layout_alignEnd="@+id/juego1Button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="juego2"/>
 </RelativeLayout>

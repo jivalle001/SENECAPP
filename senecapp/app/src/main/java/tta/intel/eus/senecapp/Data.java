@@ -89,11 +89,7 @@ public class Data {
                 }
                 for(int j=0;j<jsonArray2.length();j++){
                     pair1.add(jsonArray2.getString(j));
-                }
-                for(int j=0;j<jsonArray3.length();j++){
                     pair2.add(jsonArray3.getString(j));
-                }
-                for(int j=0;j<jsonArray4.length();j++){
                     pair3.add(jsonArray4.getString(j));
                 }
                 pareja = new Parejas.Pareja();
@@ -101,9 +97,44 @@ public class Data {
                 pareja.setPair1(pair1);
                 pareja.setPair2(pair2);
                 pareja.setPair3(pair3);
-                parejas.getBoard().add(pareja);
+                parejas.getBoard().add(pareja);//SALTA UNA EXCEPCIÓN!!!!
             }
             return parejas;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Tests getTests(RestClient restClient){
+        try {
+            Tests.Test test;
+            Tests tests = new Tests();
+            List<String> lista;
+            JSONObject json = restClient.getJson("requestTests");
+            tests.setTotal(json.getInt("total"));
+            JSONArray array = json.getJSONArray("test");
+            for (int i=0;i<array.length();i++){
+                test = new Tests.Test();
+                JSONObject item = array.getJSONObject(i);
+                test.setCorrect(item.getInt("correct"));
+                test.setQuestion(item.getString("question"));
+                JSONArray array2 = item.getJSONArray("resp");
+                lista = new ArrayList<String>();
+                for (int j=0;j<array2.length();j++){
+                    lista.add(String.valueOf(array2.getString(j)));
+                }
+                test.setResp(lista);
+                tests.getTest().add(test);
+            }
+            return tests;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;

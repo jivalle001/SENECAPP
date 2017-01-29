@@ -43,4 +43,7 @@
     <string name="surname2Text">Segundo apellido</string>
     <string name="confirmPassText">Confirmar contraseña</string>
     <string name="continueButtonText">Seguir</string>
+
+    <!--Juego1-->
+    <string name="action_home">Home</string>
 </resources>

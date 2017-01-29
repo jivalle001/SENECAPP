@@ -1,6 +1,7 @@
 package tta.intel.eus.senecapp;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class Parejas {
     private int total;
-    private List<Pareja> board;
+    private List<Pareja> board = new ArrayList<Pareja>();
 
     public Parejas() {
     }
