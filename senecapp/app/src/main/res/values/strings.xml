@@ -46,4 +46,8 @@
 
     <!--Juego1-->
     <string name="action_home">Home</string>
+
+    <!--Expresiones1-->
+    <string name="noMicro">No hay microfono en tu dispositivo</string>
+    <string name="noApp">No hay app desde donde acceder a la función llamada</string>
 </resources>

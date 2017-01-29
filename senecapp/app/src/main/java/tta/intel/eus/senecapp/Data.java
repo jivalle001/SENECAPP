@@ -147,4 +147,56 @@ public class Data {
             return null;
         }
     }
+
+    public Expresiones getExpresiones(RestClient restClient){
+        try {
+            Expresiones.Expresion expresion;
+            Expresiones expresiones = new Expresiones();
+            JSONObject json = restClient.getJson("requestExpresiones");
+            expresiones.setTotalConversacion(json.getInt("totalConversacion"));
+            expresiones.setTotalUniversidad(json.getInt("totalUniversidad"));
+            expresiones.setTotalCompras(json.getInt("totalCompras"));
+            JSONArray expresionConversacion = json.getJSONArray("expresionConversacion");
+            for (int i=0;i<expresionConversacion.length();i++){
+                expresion = new Expresiones.Expresion();
+                JSONObject item = expresionConversacion.getJSONObject(i);
+                expresion.setAudio(item.getString("audio"));
+                expresion.setFrase1(item.getString("frase1"));
+                expresion.setFrase2(item.getString("frase2"));
+                expresion.setCategoria(item.getString("categoria"));
+                expresiones.getExpresionConversacion().add(expresion);
+            }
+            JSONArray expresionUniversidad = json.getJSONArray("expresionUniversidad");
+            for (int i=0;i<expresionUniversidad.length();i++){
+                expresion = new Expresiones.Expresion();
+                JSONObject item = expresionUniversidad.getJSONObject(i);
+                expresion.setAudio(item.getString("audio"));
+                expresion.setFrase1(item.getString("frase1"));
+                expresion.setFrase2(item.getString("frase2"));
+                expresion.setCategoria(item.getString("categoria"));
+                expresiones.getExpresionUniversidad().add(expresion);
+            }
+            JSONArray expresionCompras = json.getJSONArray("expresionCompras");
+            for (int i=0;i<expresionCompras.length();i++){
+                expresion = new Expresiones.Expresion();
+                JSONObject item = expresionCompras.getJSONObject(i);
+                expresion.setAudio(item.getString("audio"));
+                expresion.setFrase1(item.getString("frase1"));
+                expresion.setFrase2(item.getString("frase2"));
+                expresion.setCategoria(item.getString("categoria"));
+                expresiones.getExpresionCompras().add(expresion);
+            }
+            return expresiones;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
