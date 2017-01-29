@@ -17,4 +17,14 @@ public class ExpresionesActivity extends AppCompatActivity {
         Intent intent = new Intent(this,Expresiones1Activity.class);
         startActivity(intent);
     }
+
+    public void expresiones2(View view){
+        Intent intent = new Intent(this,Expresiones2Activity.class);
+        startActivity(intent);
+    }
+
+    /*public void expresiones3(View view){
+        Intent intent = new Intent(this,Expresiones3Activity.class);
+        startActivity(intent);
+    }*/
 }

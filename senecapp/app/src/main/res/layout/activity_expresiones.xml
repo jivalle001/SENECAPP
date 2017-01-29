@@ -30,7 +30,8 @@
         android:layout_alignRight="@+id/inicioConversaciónButton"
         android:layout_alignEnd="@+id/inicioConversaciónButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="expresiones2"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -41,5 +42,6 @@
         android:layout_alignRight="@+id/universidadButton"
         android:layout_alignEnd="@+id/universidadButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="expresiones3"/>
 </RelativeLayout>
