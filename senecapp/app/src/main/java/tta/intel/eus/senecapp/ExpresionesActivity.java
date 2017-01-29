@@ -23,8 +23,8 @@ public class ExpresionesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*public void expresiones3(View view){
+    public void expresiones3(View view){
         Intent intent = new Intent(this,Expresiones3Activity.class);
         startActivity(intent);
-    }*/
+    }
 }

@@ -38,7 +38,8 @@
         <activity android:name=".Juego1Activity" />
         <activity android:name=".Juego2Activity" />
         <activity android:name=".Expresiones1Activity" />
-        <activity android:name=".Expresiones2Activity"></activity>
+        <activity android:name=".Expresiones2Activity" />
+        <activity android:name=".Expresiones3Activity"></activity>
     </application>
 
 </manifest>
