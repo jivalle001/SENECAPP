@@ -23,7 +23,7 @@ public class AudioPlayer implements MediaController.MediaPlayerControl,MediaPlay
         this.view=view;
         player = new MediaPlayer();
         player.setOnPreparedListener(this);
-        controller = controller = new MediaController(view.getContext()){
+        controller = new MediaController(view.getContext()){
             @Override
             public void hide(){
 

@@ -9,7 +9,125 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tta.intel.eus.senecapp.MapasActivity">
 
-    <ExpandableListView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/table">
+        </TableLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bizkaia"
+        android:id="@+id/bizkaiaButton"
+        android:layout_below="@+id/scrollView"
+        android:layout_alignRight="@+id/scrollView"
+        android:layout_alignEnd="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Araba"
+        android:id="@+id/arabaButton"
+        android:layout_below="@+id/bizkaiaButton"
+        android:layout_alignRight="@+id/bizkaiaButton"
+        android:layout_alignEnd="@+id/bizkaiaButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gipuzkoa"
+        android:id="@+id/gipuzkoaButton"
+        android:layout_below="@+id/arabaButton"
+        android:layout_alignRight="@+id/arabaButton"
+        android:layout_alignEnd="@+id/arabaButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ocio"
+        android:id="@+id/ocioButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/scrollView"
+        android:layout_alignEnd="@+id/scrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gastronomía"
+        android:id="@+id/gastronomiaButton"
+        android:layout_alignTop="@+id/arabaButton"
+        android:layout_alignRight="@+id/arabaButton"
+        android:layout_alignEnd="@+id/arabaButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arte"
+        android:id="@+id/arteButton"
+        android:layout_alignBottom="@+id/gipuzkoaButton"
+        android:layout_alignRight="@+id/arabaButton"
+        android:layout_alignEnd="@+id/arabaButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deporte"
+        android:id="@+id/deporteButton"
+        android:layout_below="@+id/gipuzkoaButton"
+        android:layout_alignRight="@+id/gipuzkoaButton"
+        android:layout_alignEnd="@+id/gipuzkoaButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edificios Municipales"
+        android:id="@+id/edificiosButton"
+        android:layout_below="@+id/deporteButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lugares de Interés"
+        android:id="@+id/lugaresButton"
+        android:layout_below="@+id/edificiosButton"
+        android:layout_alignRight="@+id/edificiosButton"
+        android:layout_alignEnd="@+id/edificiosButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"/>
+
+    <!--<ExpandableListView
         android:id="@+id/expandable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,5 +135,5 @@
         android:dividerHeight="1dp"
         android:indicatorLeft=
             "?android:attr/expandableListPreferredChildIndicatorLeft">
-    </ExpandableListView>
+    </ExpandableListView>-->
 </RelativeLayout>

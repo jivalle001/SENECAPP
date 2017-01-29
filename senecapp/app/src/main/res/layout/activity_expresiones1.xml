@@ -50,5 +50,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="nextExpresion"/>
+        android:onClick="nextExpresion"
+        android:visibility="invisible"/>
 </RelativeLayout>

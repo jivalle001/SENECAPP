@@ -93,25 +93,12 @@ public class Expresiones1Activity extends AppCompatActivity {
         audio.setAudioUri(Uri.parse(advise));
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         if(times == 0){
-            params.height = 600;
-
-            if(num == expresiones.getTotalConversacion()-1)
-            {
-                Button button = (Button)findViewById(R.id.nextAudioButton);
-                button.setText("FIN");
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-                        startActivity(intent);
-                    }
-                });
-
-            }
+            params.height = 400;
+            times++;
         }
         else
         {
-            params.height = 1100;
+            params.height = 900;
             Button button = (Button)findViewById(R.id.nextAudioButton);
             button.setVisibility(View.VISIBLE);
             if(num == expresiones.getTotalConversacion()-1)

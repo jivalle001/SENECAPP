@@ -199,4 +199,36 @@ public class Data {
             return null;
         }
     }
+
+    public Lugares getLugares(RestClient restClient){
+        try {
+            Lugares.Lugar lugar;
+            Lugares lugares = new Lugares();
+            JSONObject json = restClient.getJson("requestLugares");
+            lugares.setTotal(json.getInt("total"));
+            JSONArray array = json.getJSONArray("lugar");
+            for (int i=0;i<array.length();i++){
+                lugar = new Lugares.Lugar();
+                JSONObject item = array.getJSONObject(i);
+                lugar.setLatitud((float) item.getDouble("latitud"));
+                lugar.setLongitud((float) item.getDouble("longitud"));
+                lugar.setNombre(item.getString("nombre"));
+                lugar.setCategoria(item.getString("categoria"));
+                lugar.setProvincia(item.getString("provincia"));
+                lugares.getLugar().add(lugar);
+            }
+            return lugares;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

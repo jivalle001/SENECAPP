@@ -83,7 +83,7 @@ public class Juego2Activity extends AppCompatActivity {
                         @Override
                         protected void onPostExecute(Integer integer) {
                             //super.onPostExecute(aVoid);
-                            Drawable drawable = new BitmapDrawable(getResources(),Bitmap.createScaledBitmap(bitmap,350,250,true));
+                            Drawable drawable = new BitmapDrawable(getResources(),Bitmap.createScaledBitmap(bitmap,350,220,true));
                             rb.setButtonDrawable(drawable);
                             //rb.setHeight(500);
                             //rb.setWidth(500);
