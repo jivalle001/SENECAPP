@@ -26,8 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         final String username = ((EditText)findViewById(R.id.loginUser)).getText().toString();
         final String password = ((EditText)findViewById(R.id.loginPassword)).getText().toString();
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String un = sharedPreferences.getString("username",null);
-        String p = sharedPreferences.getString("password",null);
         final Data data = new Data();
 
         new AsyncTask<Void,Void,Void>(){
@@ -43,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.matches(usuario.getUsuario()) && password.matches(usuario.getContraseña())){
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean("cambio",true);
+                    editor.putString("username",username);
                     editor.commit();
                     Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
                     startActivity(intent);

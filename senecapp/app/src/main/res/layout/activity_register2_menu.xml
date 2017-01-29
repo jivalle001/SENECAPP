@@ -22,7 +22,6 @@
         android:layout_width="150dp"
         android:layout_height="450dp"
         android:id="@+id/mujer"
-        android:src="@drawable/chica1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="mujer"

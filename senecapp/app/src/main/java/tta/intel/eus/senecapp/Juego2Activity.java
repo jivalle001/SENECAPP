@@ -23,12 +23,6 @@ import java.net.URL;
 
 public class Juego2Activity extends AppCompatActivity {
 
-    /*String question = "¿Cuál de las siguientes opciones NO se indica en el fichero de manifiesto de la app?";
-    String[] answers = {"Versión de la aplicación","Listado de los componentes de la aplicación","Opciones del menú de ajustes","Nivel mínimo de la API Android requerida","Nombre del paquete java de la aplicación"};
-    boolean[] corrects = {false,false,true,false,false};
-    String[] advise = {"https://www.google.es/","<html><body>The manifest describes the <b>components of the application</b>: " +
-            "the activities, services, broadcast receivers, and content providers that...",null,"http://u017633.ehu.eus:28080/static/ServidorTta/AndroidManifest.mp4","http://u017633.ehu.eus:28080/static/ServidorTta/AndroidManifest.mp4"};
-    String[] adviseType = {"text/html","text/html",null,"video/mp4","audio/mp4"};*/
     int selected;
     Data data;
     Tests tests;
@@ -82,13 +76,8 @@ public class Juego2Activity extends AppCompatActivity {
 
                         @Override
                         protected void onPostExecute(Integer integer) {
-                            //super.onPostExecute(aVoid);
                             Drawable drawable = new BitmapDrawable(getResources(),Bitmap.createScaledBitmap(bitmap,350,220,true));
                             rb.setButtonDrawable(drawable);
-                            //rb.setHeight(500);
-                            //rb.setWidth(500);
-                            //imageView.setImageBitmap(bitmap);
-                            //rb.setText(tests.getTest().get(num).getResp().get(integer));
                             rb.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

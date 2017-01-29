@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -30,10 +31,17 @@ public class Register2HombreActivity extends AppCompatActivity {
     URL url1,url2,url3,url4;
     Bitmap bmp1,bmp2,bmp3,bmp4;
 
+    boolean cambio;
+    String un;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2_hombre);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        cambio = sharedPreferences.getBoolean("cambio",false);
+        un = sharedPreferences.getString("username",null);
 
         final ImageView b1 = (ImageView)findViewById(R.id.imagechico1);
         final ImageView b2 = (ImageView)findViewById(R.id.imageChico2);
@@ -75,12 +83,15 @@ public class Register2HombreActivity extends AppCompatActivity {
                 b4.setOnClickListener(myhandler4);
 
                 Intent intent = getIntent();
-                Bundle extras = intent.getExtras();
-                apellido1 = extras.getString("apellido1");
-                apellido2 = extras.getString("apellido2");
-                password = extras.getString("pass");
-                name = extras.getString("name");
-                username = extras.getString("username");
+                if(cambio!=true)
+                {
+                    Bundle extras = intent.getExtras();
+                    apellido1 = extras.getString("apellido1");
+                    apellido2 = extras.getString("apellido2");
+                    password = extras.getString("pass");
+                    name = extras.getString("name");
+                    username = extras.getString("username");
+                }
             }
         }.execute();
 
@@ -99,8 +110,17 @@ public class Register2HombreActivity extends AppCompatActivity {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     try {
-                        restClient.postJson(json,"addUsuario");
+                        if(cambio!=true){
+                            restClient.postJson(json,"addUsuario");
+                        }
+                        else
+                        {
+                            restClient.getJson(String.format("actualizarUsuario?usuario=%s&&avatar=%s",un,url1.toString()));
+                        }
+
                     } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     return null;
@@ -110,8 +130,6 @@ public class Register2HombreActivity extends AppCompatActivity {
                 protected void onPostExecute(Void aVoid) {
                     super.onPostExecute(aVoid);
                     Intent intent = getIntent();
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    boolean cambio = sharedPreferences.getBoolean("cambio",false);
                     if(cambio!=true) {
                         intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
@@ -129,7 +147,7 @@ public class Register2HombreActivity extends AppCompatActivity {
         public void onClick(View view){
             Data data = new Data();
             int imageId = R.drawable.chico1;
-            Usuario usuario = new Usuario(apellido1,apellido2,"avatar",password,name,username);
+            Usuario usuario = new Usuario(apellido1,apellido2,url2.toString(),password,name,username);
             final JSONObject json = data.putUsuario(usuario);
 
             new AsyncTask<Void,Void,Void>(){
@@ -137,8 +155,16 @@ public class Register2HombreActivity extends AppCompatActivity {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     try {
-                        restClient.postJson(json,"addUsuario");
+                        if(cambio!=true){
+                            restClient.postJson(json,"addUsuario");
+                        }
+                        else
+                        {
+                            restClient.getJson(String.format("actualizarUsuario?usuario=%s&&avatar=%s",un,url2.toString()));
+                        }
                     } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     return null;
@@ -148,8 +174,6 @@ public class Register2HombreActivity extends AppCompatActivity {
                 protected void onPostExecute(Void aVoid) {
                     super.onPostExecute(aVoid);
                     Intent intent = getIntent();
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    boolean cambio = sharedPreferences.getBoolean("cambio",false);
                     if(cambio!=true) {
                         intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
@@ -167,7 +191,7 @@ public class Register2HombreActivity extends AppCompatActivity {
         public void onClick(View view){
             Data data = new Data();
             int imageId = R.drawable.chico1;
-            Usuario usuario = new Usuario(apellido1,apellido2,"avatar",password,name,username);
+            Usuario usuario = new Usuario(apellido1,apellido2,url3.toString(),password,name,username);
             final JSONObject json = data.putUsuario(usuario);
 
             new AsyncTask<Void,Void,Void>(){
@@ -175,8 +199,16 @@ public class Register2HombreActivity extends AppCompatActivity {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     try {
-                        restClient.postJson(json,"addUsuario");
+                        if(cambio!=true){
+                            restClient.postJson(json,"addUsuario");
+                        }
+                        else
+                        {
+                            restClient.getJson(String.format("actualizarUsuario?usuario=%s&&avatar=%s",un,url3.toString()));
+                        }
                     } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     return null;
@@ -186,8 +218,6 @@ public class Register2HombreActivity extends AppCompatActivity {
                 protected void onPostExecute(Void aVoid) {
                     super.onPostExecute(aVoid);
                     Intent intent = getIntent();
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    boolean cambio = sharedPreferences.getBoolean("cambio",false);
                     if(cambio!=true) {
                         intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
@@ -205,7 +235,7 @@ public class Register2HombreActivity extends AppCompatActivity {
         public void onClick(View view){
             Data data = new Data();
             int imageId = R.drawable.chico1;
-            Usuario usuario = new Usuario(apellido1,apellido2,"avatar",password,name,username);
+            Usuario usuario = new Usuario(apellido1,apellido2,url4.toString(),password,name,username);
             final JSONObject json = data.putUsuario(usuario);
 
             new AsyncTask<Void,Void,Void>(){
@@ -213,8 +243,16 @@ public class Register2HombreActivity extends AppCompatActivity {
                 @Override
                 protected Void doInBackground(Void... voids) {
                     try {
-                        restClient.postJson(json,"addUsuario");
+                        if(cambio!=true){
+                            restClient.postJson(json,"addUsuario");
+                        }
+                        else
+                        {
+                            restClient.getJson(String.format("actualizarUsuario?usuario=%s&&avatar=%s",un,url4.toString()));
+                        }
                     } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                     return null;
@@ -224,8 +262,6 @@ public class Register2HombreActivity extends AppCompatActivity {
                 protected void onPostExecute(Void aVoid) {
                     super.onPostExecute(aVoid);
                     Intent intent = getIntent();
-                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    boolean cambio = sharedPreferences.getBoolean("cambio",false);
                     if(cambio!=true) {
                         intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);

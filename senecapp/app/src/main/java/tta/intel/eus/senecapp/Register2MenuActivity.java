@@ -1,10 +1,12 @@
 package tta.intel.eus.senecapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,6 +23,8 @@ public class Register2MenuActivity extends AppCompatActivity {
     Bitmap bmp1;
     Bitmap bmp2;
 
+    boolean cambio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,8 @@ public class Register2MenuActivity extends AppCompatActivity {
         final ImageView imageView1 = (ImageView)findViewById(R.id.hombre);
         final ImageView imageView2 = (ImageView)findViewById(R.id.mujer);
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        cambio = sharedPreferences.getBoolean("cambio",false);
 
         new AsyncTask<Void,Void,Void>(){
             @Override
@@ -58,29 +64,33 @@ public class Register2MenuActivity extends AppCompatActivity {
 
     public void hombre(View view){
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        bundle.putString("apellido1",bundle.getString("apellido1"));
-        bundle.putString("apellido2",bundle.getString("apellido2"));
-        bundle.putString("pass",bundle.getString("pass"));
-        bundle.putString("name",bundle.getString("name"));
-        bundle.putString("username",bundle.getString("username"));
-
+        Bundle bundle;
         Intent intent1 = new Intent(getApplicationContext(),Register2HombreActivity.class);
-        intent1.putExtras(bundle);
+        if(cambio!=true){
+            bundle = intent.getExtras();
+            bundle.putString("apellido1",bundle.getString("apellido1"));
+            bundle.putString("apellido2",bundle.getString("apellido2"));
+            bundle.putString("pass",bundle.getString("pass"));
+            bundle.putString("name",bundle.getString("name"));
+            bundle.putString("username",bundle.getString("username"));
+            intent1.putExtras(bundle);
+        }
         startActivity(intent1);
     }
 
     public void mujer(View view){
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        bundle.putString("apellido1",bundle.getString("apellido1"));
-        bundle.putString("apellido2",bundle.getString("apellido2"));
-        bundle.putString("pass",bundle.getString("pass"));
-        bundle.putString("name",bundle.getString("name"));
-        bundle.putString("username",bundle.getString("username"));
-
+        Bundle bundle;
         Intent intent1 = new Intent(getApplicationContext(),Register2MujerActivity.class);
-        intent1.putExtras(bundle);
+        if(cambio!=true) {
+            bundle = intent.getExtras();
+            bundle.putString("apellido1",bundle.getString("apellido1"));
+            bundle.putString("apellido2",bundle.getString("apellido2"));
+            bundle.putString("pass",bundle.getString("pass"));
+            bundle.putString("name",bundle.getString("name"));
+            bundle.putString("username",bundle.getString("username"));
+            intent1.putExtras(bundle);
+        }
         startActivity(intent1);
     }
 

@@ -28,18 +28,6 @@ public class RestClient {
         this.baseUrl=baseUrl;
     }
 
-    /*public void setHttpBasicAuth(String user, String passwd) {
-        String basicAuth = Base64.encodeToString(String.format("%s:%s",user,passwd).getBytes(),Base64.DEFAULT);
-        properties.put(AUTH,String.format("Basic %s",basicAuth));
-    }*/
-
-    /*public String getAuthorization(){
-        return properties.get(AUTH);
-    }*/
-
-    /*public void setAuthorization(String auth){
-        properties.put(AUTH,auth);
-    }*/
 
     public void setProperty(String name, String value) {
         properties.put(name,value);

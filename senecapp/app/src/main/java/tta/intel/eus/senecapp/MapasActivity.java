@@ -76,33 +76,6 @@ public class MapasActivity extends AppCompatActivity {
             }
         }.execute();
 
-
-        /*expandableListView = (ExpandableListView)findViewById(R.id.expandable);
-        expandableListDetail = ExpandableListDataPump.getData();
-        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-        expandableListAdapter = new CustomExpandableListAdapter(this,expandableListTitle,expandableListDetail);
-        expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener(){
-
-            @Override
-            public void onGroupExpand(int groupPosition){
-                Toast.makeText(getApplicationContext(),expandableListTitle.get(groupPosition) + " List Expanded.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener(){
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(), expandableListTitle.get(groupPosition) + " List Collapsed.", Toast.LENGTH_SHORT).show();
-            }
-        });
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(getApplicationContext(), expandableListTitle.get(groupPosition) + " -> " + expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition), Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });*/
     }
 
     public void loadButtons(final String provincia){
@@ -175,12 +148,10 @@ public class MapasActivity extends AppCompatActivity {
         TableLayout tableLayout = (TableLayout)findViewById(R.id.table);
 
         TableRow tr_head = new TableRow(this);
-        //tr_head.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        //tableLayout.addView(tr_head,new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         for (int i=0;i<lista.size();i++){
             int count = 0;
-            String nombre = lista.get(i).getNombre();
+            final String nombre = lista.get(i).getNombre();
             Button button = new Button(this);
             button.setText("Mostrar Ubicación");
             final Float latitud = places.getLugar().get(i).getLatitud();
@@ -188,7 +159,7 @@ public class MapasActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Uri uri = Uri.parse("geo:"+latitud+","+longitud);
+                    Uri uri = Uri.parse("geo:"+latitud+","+longitud+"?q="+latitud+","+longitud+"("+nombre+")");
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW,uri);
                     mapIntent.setPackage("com.google.android.apps.maps");
                     if(mapIntent.resolveActivity(getPackageManager())!=null){
