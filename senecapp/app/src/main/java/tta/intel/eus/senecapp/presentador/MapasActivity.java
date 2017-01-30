@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +14,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import tta.intel.eus.senecapp.modelo.Data;
+import tta.intel.eus.senecapp.R;
+import tta.intel.eus.senecapp.modelo.RestClient;
+import tta.intel.eus.senecapp.modelo.Lugares;
 
 public class MapasActivity extends AppCompatActivity {
 
@@ -113,7 +118,7 @@ public class MapasActivity extends AppCompatActivity {
         edificios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadTable(provincia,"Edificios Municipales");
+                loadTable(provincia,"Edificios municipales");
             }
         });
         lugares.setVisibility(View.VISIBLE);
@@ -152,8 +157,8 @@ public class MapasActivity extends AppCompatActivity {
             final String nombre = lista.get(i).getNombre();
             Button button = new Button(this);
             button.setText(R.string.mostrarButton);
-            final Float latitud = places.getLugar().get(i).getLatitud();
-            final Float longitud = places.getLugar().get(i).getLongitud();
+            final Float latitud = lista.get(i).getLatitud();
+            final Float longitud = lista.get(i).getLongitud();
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

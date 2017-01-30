@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +14,11 @@ import android.widget.ImageView;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import tta.intel.eus.senecapp.modelo.Data;
+import tta.intel.eus.senecapp.R;
+import tta.intel.eus.senecapp.modelo.RestClient;
+import tta.intel.eus.senecapp.modelo.Usuario;
 
 public class MenuActivity extends AppCompatActivity {
 

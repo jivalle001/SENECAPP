@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Locale;
+
+import tta.intel.eus.senecapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

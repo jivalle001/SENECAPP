@@ -1,13 +1,13 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -16,7 +16,13 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-public class Expresiones2Activity extends AppCompatActivity {
+import tta.intel.eus.senecapp.vista.AudioPlayer;
+import tta.intel.eus.senecapp.modelo.Data;
+import tta.intel.eus.senecapp.R;
+import tta.intel.eus.senecapp.modelo.RestClient;
+import tta.intel.eus.senecapp.modelo.Expresiones;
+
+public class Expresiones1Activity extends AppCompatActivity {
 
     Data data;
     Expresiones expresiones;
@@ -28,11 +34,12 @@ public class Expresiones2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expresiones2);
+        setContentView(R.layout.activity_expresiones1);
 
         setTitle(R.string.expresionesTitle);
 
         loadInfo();
+
     }
 
     public void loadInfo() {
@@ -54,11 +61,11 @@ public class Expresiones2Activity extends AppCompatActivity {
 
     public void loadActividad(){
         TextView textView1 = (TextView)findViewById(R.id.expresionTextCastellano);
-        textView1.setText(expresiones.getExpresionUniversidad().get(num).getFrase1());
+        textView1.setText(expresiones.getExpresionConversacion().get(num).getFrase1());
         TextView textView2 = (TextView)findViewById(R.id.expresionTextEuskara);
-        textView2.setText(expresiones.getExpresionUniversidad().get(num).getFrase2());
+        textView2.setText(expresiones.getExpresionConversacion().get(num).getFrase2());
         try {
-            showAudio(expresiones.getExpresionUniversidad().get(num).getAudio());
+            showAudio(expresiones.getExpresionConversacion().get(num).getAudio());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,19 +97,18 @@ public class Expresiones2Activity extends AppCompatActivity {
 
     private void showAudio(String advise) throws IOException {
         View view = new View(this);
-        AudioPlayer audio = new AudioPlayer(view);
+        final AudioPlayer audio = new AudioPlayer(view);
         audio.setAudioUri(Uri.parse(advise));
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         if(times == 0){
             params.height = 400;
             times++;
         }
-        else
-        {
+        else {
             params.height = 900;
             Button button = (Button)findViewById(R.id.nextAudioButton);
             button.setVisibility(View.VISIBLE);
-            if(num == expresiones.getTotalUniversidad()-1)
+            if(num == expresiones.getTotalConversacion()-1)
             {
                 button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
@@ -116,16 +122,25 @@ public class Expresiones2Activity extends AppCompatActivity {
             }
         }
         view.setLayoutParams(params);
-
-        ViewGroup layout = (ViewGroup)findViewById(R.id.expresion2_layout);
+        ViewGroup layout = (ViewGroup)findViewById(R.id.expresion1_layout);
         layout.addView(view);
+
+        Button buttonNext = (Button)findViewById(R.id.nextAudioButton);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                audio.ocultar();
+                nextExpresion(view);
+            }
+        });
         audio.start();
     }
 
     public void nextExpresion(View view){
         num++;
         times = 0;
-        setContentView(R.layout.activity_expresiones2);
+
+        setContentView(R.layout.activity_expresiones1);
 
         setTitle(R.string.expresionesTitle);
 

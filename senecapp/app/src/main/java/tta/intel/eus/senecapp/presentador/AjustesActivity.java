@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.Locale;
+
+import tta.intel.eus.senecapp.R;
 
 public class AjustesActivity extends AppCompatActivity {
 

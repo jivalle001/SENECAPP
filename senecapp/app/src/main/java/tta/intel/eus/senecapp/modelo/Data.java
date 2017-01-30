@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.modelo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -7,6 +7,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import tta.intel.eus.senecapp.modelo.Expresiones;
+import tta.intel.eus.senecapp.modelo.Lugares;
+import tta.intel.eus.senecapp.modelo.Parejas;
+import tta.intel.eus.senecapp.modelo.RestClient;
+import tta.intel.eus.senecapp.modelo.Tests;
+import tta.intel.eus.senecapp.modelo.Usuario;
 
 /**
  * Created by jose on 18/01/17.

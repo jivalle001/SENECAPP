@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.vista;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -101,16 +101,20 @@ public class AudioPlayer implements MediaController.MediaPlayerControl,MediaPlay
 
     @Override
     public boolean canSeekBackward() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean canSeekForward() {
-        return true;
+        return false;
     }
 
     @Override
     public int getAudioSessionId() {
         return 0;
+    }
+
+    public void ocultar(){
+        controller.setVisibility(View.INVISIBLE);
     }
 }

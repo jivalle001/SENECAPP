@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.modelo;
 
 /**
  * Created by jose on 18/01/17.

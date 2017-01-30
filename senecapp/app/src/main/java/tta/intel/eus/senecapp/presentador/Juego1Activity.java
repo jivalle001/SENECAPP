@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp;
+package tta.intel.eus.senecapp.presentador;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import tta.intel.eus.senecapp.modelo.Data;
+import tta.intel.eus.senecapp.R;
+import tta.intel.eus.senecapp.modelo.RestClient;
+import tta.intel.eus.senecapp.modelo.Parejas;
 
 public class Juego1Activity extends AppCompatActivity {
 

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tta.intel.eus.senecapp.Expresiones3Activity"
+    tools:context=".presentador.Expresiones3Activity"
     android:id="@+id/expresion3_layout">
 
     <TextView
