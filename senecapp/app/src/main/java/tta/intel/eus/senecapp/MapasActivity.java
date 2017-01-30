@@ -17,10 +17,6 @@ import java.util.List;
 
 public class MapasActivity extends AppCompatActivity {
 
-    /*ExpandableListView expandableListView;
-    ExpandableListAdapter expandableListAdapter;
-    List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;*/
     Button bizkaia,araba,gipuzkoa,ocio,gastronomia,arte,deporte,edificios,lugares;
     Data data;
     Lugares places;
@@ -31,6 +27,8 @@ public class MapasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapas);
+
+        setTitle(R.string.mapasTitle);
 
         new AsyncTask<Void,Void,Void>(){
             @Override
@@ -153,7 +151,7 @@ public class MapasActivity extends AppCompatActivity {
             int count = 0;
             final String nombre = lista.get(i).getNombre();
             Button button = new Button(this);
-            button.setText("Mostrar Ubicación");
+            button.setText(R.string.mostrarButton);
             final Float latitud = places.getLugar().get(i).getLatitud();
             final Float longitud = places.getLugar().get(i).getLongitud();
             button.setOnClickListener(new View.OnClickListener() {

@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cambiar Avatar"
+        android:text="@string/cambiarAvatar"
         android:id="@+id/avatarButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cambiar Idioma"
+        android:text="@string/cambiarIdioma"
         android:id="@+id/idiomaButton"
         android:layout_below="@+id/avatarButton"
         android:layout_alignRight="@+id/avatarButton"

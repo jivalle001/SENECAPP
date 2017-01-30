@@ -1,31 +1,16 @@
 <resources>
-    <string name="app_name" translatable="false">Senecapp</string>
+    <string name="app_name">SENECAPP</string>
     <string name="str_es" translatable="false">Castellano</string>
     <string name="str_eu" translatable="false">Euskara</string>
     <string-array name="idiomas">
         <item>@string/str_es</item>
         <item>@string/str_eu</item>
     </string-array>
-    <string-array name="type">
-        <item>New Game</item>
-        <item>3 X 2</item>
-    </string-array>
-    <string name="hombre1" translatable="false">chico1</string>
-    <string name="hombre2" translatable="false">chico1</string>
-    <string name="hombre3" translatable="false">chico1</string>
-    <string name="hombre4" translatable="false">chico1</string>
-    <string-array name="hombres">
-        <item>@string/hombre1</item>
-        <item>@string/hombre2</item>
-        <item>@string/hombre3</item>
-        <item>@string/hombre4</item>
-    </string-array>
 
     <!--MainActivity-->
     <string name="str_button">Cambiar Idioma</string>
     <string name="castellanoButton" translatable="false">CASTELLANO</string>
     <string name="euskaraButton" translatable="false">EUSKARA</string>
-    <string name="title_activity_login" translatable="false">Log in</string>
 
     <!--LoginMenuActivity-->
     <string name="loginMenuButtonText">Iniciar sesión</string>
@@ -36,6 +21,9 @@
     <string name="passwordText">Contraseña</string>
     <string name="loginButtonText">Entrar</string>
     <string name="registerButtonText">Registrarse</string>
+    <string name="loginIncorrecto">Login incorrecto</string>
+    <string name="loginCompletar">Completa todos los campos</string>
+    <string name="loginTitle">Iniciar sesión</string>
 
     <!--RegisterActivity-->
     <string name="nameText">Nombre</string>
@@ -43,11 +31,64 @@
     <string name="surname2Text">Segundo apellido</string>
     <string name="confirmPassText">Confirmar contraseña</string>
     <string name="continueButtonText">Seguir</string>
+    <string name="usuarioRegistrado">Usuario ya registrado</string>
+    <string name="registroTitle">Registro</string>
+
+    <!--Register2Menu-->
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="registro2MenuTitle">Selección de avatar</string>
+
+    <!--Menu-->
+    <string name="actividades">Actividades</string>
+    <string name="expresiones">Expresiones</string>
+    <string name="mapas">Mapas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="cerrar">Cerrar sesión</string>
+    <string name="menuTitle">Menú principal</string>
+
+    <!--Actividades-->
+    <string name="nombreJuego1">Une las imágenes con las palabras</string>
+    <string name="nombreJuego2">Adivina la palabra</string>
+    <string name="actividadesTitle">Actividades</string>
+
+    <!--Ajustes-->
+    <string name="cambiarAvatar">Cambiar avatar</string>
+    <string name="cambiarIdioma">Cambiar idioma</string>
+    <string name="ajustesTitle">Ajustes</string>
+
+    <!--Expresiones-->
+    <string name="inicioConversación">Inicio de conversación</string>
+    <string name="universidad">Universidad</string>
+    <string name="compras">Compras</string>
+    <string name="expresionesTitle">Expresiones</string>
 
     <!--Juego1-->
-    <string name="action_home">Home</string>
+    <string name="juego1Title">Juego 1</string>
 
-    <!--Expresiones1-->
+    <!--Juego2-->
+    <string name="correcto">¡Correcto!</string>
+    <string name="fallo">¡Has fallado!</string>
+    <string name="adivinar">Adivinar</string>
+    <string name="juego2Title">Juego 2</string>
+
+    <!--Expresiones-->
     <string name="noMicro">No hay microfono en tu dispositivo</string>
-    <string name="noApp">No hay app desde donde acceder a la función llamada</string>
+    <string name="noApp">No hay app para ejecutar esta función</string>
+    <string name="fin">Fin</string>
+    <string name="grabarAudio">Grabar</string>
+    <string name="siguiente">Siguiente</string>
+
+    <!--Mapas-->
+    <string name="mostrarButton">Mostrar</string>
+    <string name="bizkaia">Vizcaya</string>
+    <string name="araba">Alava</string>
+    <string name="gipuzkoa">Guipúzcoa</string>
+    <string name="ocio">Ocio</string>
+    <string name="gastronomia">Gastronomía</string>
+    <string name="arte">Arte</string>
+    <string name="deporte">Deporte</string>
+    <string name="edificios">Edificios Municipales</string>
+    <string name="lugares">Lugares de Interés</string>
+    <string name="mapasTitle">Mapas</string>
 </resources>

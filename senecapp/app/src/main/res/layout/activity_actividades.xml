@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Juego 1"
+        android:text="@string/nombreJuego1"
         android:id="@+id/juego1Button"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Juego2"
+        android:text="@string/nombreJuego2"
         android:id="@+id/juego2Button"
         android:layout_below="@+id/juego1Button"
         android:layout_alignRight="@+id/juego1Button"

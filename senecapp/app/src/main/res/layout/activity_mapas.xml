@@ -25,7 +25,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bizkaia"
+        android:text="@string/bizkaia"
         android:id="@+id/bizkaiaButton"
         android:layout_below="@+id/scrollView"
         android:layout_alignRight="@+id/scrollView"
@@ -36,7 +36,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Araba"
+        android:text="@string/araba"
         android:id="@+id/arabaButton"
         android:layout_below="@+id/bizkaiaButton"
         android:layout_alignRight="@+id/bizkaiaButton"
@@ -47,7 +47,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gipuzkoa"
+        android:text="@string/gipuzkoa"
         android:id="@+id/gipuzkoaButton"
         android:layout_below="@+id/arabaButton"
         android:layout_alignRight="@+id/arabaButton"
@@ -58,7 +58,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ocio"
+        android:text="@string/ocio"
         android:id="@+id/ocioButton"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/scrollView"
@@ -70,7 +70,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gastronomía"
+        android:text="@string/gastronomia"
         android:id="@+id/gastronomiaButton"
         android:layout_alignTop="@+id/arabaButton"
         android:layout_alignRight="@+id/arabaButton"
@@ -82,7 +82,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Arte"
+        android:text="@string/arte"
         android:id="@+id/arteButton"
         android:layout_alignBottom="@+id/gipuzkoaButton"
         android:layout_alignRight="@+id/arabaButton"
@@ -94,7 +94,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deporte"
+        android:text="@string/deporte"
         android:id="@+id/deporteButton"
         android:layout_below="@+id/gipuzkoaButton"
         android:layout_alignRight="@+id/gipuzkoaButton"
@@ -106,7 +106,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edificios Municipales"
+        android:text="@string/edificios"
         android:id="@+id/edificiosButton"
         android:layout_below="@+id/deporteButton"
         android:layout_alignParentRight="true"
@@ -118,7 +118,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lugares de Interés"
+        android:text="@string/lugares"
         android:id="@+id/lugaresButton"
         android:layout_below="@+id/edificiosButton"
         android:layout_alignRight="@+id/edificiosButton"
@@ -126,14 +126,4 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:visibility="invisible"/>
-
-    <!--<ExpandableListView
-        android:id="@+id/expandable"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/colorAccent"
-        android:dividerHeight="1dp"
-        android:indicatorLeft=
-            "?android:attr/expandableListPreferredChildIndicatorLeft">
-    </ExpandableListView>-->
 </RelativeLayout>

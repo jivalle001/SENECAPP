@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actividades"
+        android:text="@string/actividades"
         android:id="@+id/actividadesButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Expresiones"
+        android:text="@string/expresiones"
         android:id="@+id/expresionesButton"
         android:layout_below="@+id/actividadesButton"
         android:layout_alignParentRight="true"
@@ -37,7 +37,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mapas"
+        android:text="@string/mapas"
         android:id="@+id/mapasButton"
         android:layout_below="@+id/expresionesButton"
         android:layout_alignParentRight="true"
@@ -50,7 +50,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajustes"
+        android:text="@string/ajustes"
         android:id="@+id/ajustesButton"
         android:layout_below="@+id/mapasButton"
         android:layout_alignParentRight="true"
@@ -70,7 +70,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerrar Sesión"
+        android:text="@string/cerrar"
         android:id="@+id/cerrarSesionButton"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/ajustesButton"

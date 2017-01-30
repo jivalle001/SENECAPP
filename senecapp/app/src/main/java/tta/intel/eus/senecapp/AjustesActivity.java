@@ -22,6 +22,8 @@ public class AjustesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
+        setTitle(R.string.ajustesTitle);
+
         button = ((Button)findViewById(R.id.idiomaButton));
 
         button.setOnClickListener(

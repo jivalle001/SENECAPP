@@ -44,6 +44,8 @@ public class Juego1Activity extends AppCompatActivity {
 
         setContentView(R.layout.activity_juego1);
 
+        setTitle(R.string.juego1Title);
+
         Integer[] arrayWords = shuffleArray();
         Integer[] arrayImages = shuffleArray();
 
@@ -258,7 +260,7 @@ public class Juego1Activity extends AppCompatActivity {
                 button1.setVisibility(View.VISIBLE);
                 juego++;
                 if(juego == parejas.getTotal()){
-                    button1.setText("FIN");
+                    button1.setText(R.string.fin);
                     button1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -393,6 +395,8 @@ public class Juego1Activity extends AppCompatActivity {
         turns=0;
 
         setContentView(R.layout.activity_juego1);
+
+        setTitle(R.string.juego1Title);
 
         Integer[] arrayWords = shuffleArray();
         Integer[] arrayImages = shuffleArray();

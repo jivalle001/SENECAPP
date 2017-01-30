@@ -11,6 +11,8 @@ public class ActividadesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividades);
+
+        setTitle(R.string.actividadesTitle);
     }
 
     public void juego1(View view){

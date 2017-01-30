@@ -30,6 +30,8 @@ public class Expresiones1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones1);
 
+        setTitle(R.string.expresionesTitle);
+
         loadInfo();
 
     }
@@ -103,7 +105,7 @@ public class Expresiones1Activity extends AppCompatActivity {
             button.setVisibility(View.VISIBLE);
             if(num == expresiones.getTotalConversacion()-1)
             {
-                button.setText("FIN");
+                button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -124,7 +126,13 @@ public class Expresiones1Activity extends AppCompatActivity {
     public void nextExpresion(View view){
         num++;
         times = 0;
+
+        View layout = view.findViewById(R.id.expresion1_layout);
+        ((ViewGroup)layout.getParent()).removeView(layout);
+
         setContentView(R.layout.activity_expresiones1);
+
+        setTitle(R.string.expresionesTitle);
 
         loadInfo();
 

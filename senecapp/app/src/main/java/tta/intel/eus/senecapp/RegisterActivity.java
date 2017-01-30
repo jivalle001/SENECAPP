@@ -19,6 +19,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        setTitle(R.string.registroTitle);
     }
 
     public void seguir(View view){
@@ -40,11 +42,11 @@ public class RegisterActivity extends AppCompatActivity {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 try {
-                    if(usuario!=null){
+                    if(usuario!=null && !username.isEmpty()){
                         if(usuario.getUsuario().matches(username))
-                            Toast.makeText(getApplicationContext(), "Usuario ya registrado", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), R.string.usuarioRegistrado, Toast.LENGTH_SHORT).show();
                     }
-                    else {
+                    else if(!username.isEmpty() && !name.isEmpty() && !surname1.isEmpty() && !surname2.isEmpty() && !pass.isEmpty()){
                         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         String un = sharedPreferences.getString("username",null);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -61,6 +63,9 @@ public class RegisterActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(),Register2MenuActivity.class);
                         intent.putExtras(bundle);
                         startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), R.string.loginCompletar, Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception e)
                 {

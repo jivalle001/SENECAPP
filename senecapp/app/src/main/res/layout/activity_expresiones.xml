@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inicio de Conversación"
+        android:text="@string/inicioConversación"
         android:id="@+id/inicioConversaciónButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -24,7 +24,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Universidad"
+        android:text="@string/universidad"
         android:id="@+id/universidadButton"
         android:layout_below="@+id/inicioConversaciónButton"
         android:layout_alignRight="@+id/inicioConversaciónButton"
@@ -36,7 +36,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compras"
+        android:text="@string/compras"
         android:id="@+id/comprasButton"
         android:layout_below="@+id/universidadButton"
         android:layout_alignRight="@+id/universidadButton"

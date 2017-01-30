@@ -30,6 +30,8 @@ public class Expresiones2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones2);
 
+        setTitle(R.string.expresionesTitle);
+
         loadInfo();
     }
 
@@ -102,7 +104,7 @@ public class Expresiones2Activity extends AppCompatActivity {
             button.setVisibility(View.VISIBLE);
             if(num == expresiones.getTotalUniversidad()-1)
             {
-                button.setText("FIN");
+                button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -124,6 +126,8 @@ public class Expresiones2Activity extends AppCompatActivity {
         num++;
         times = 0;
         setContentView(R.layout.activity_expresiones2);
+
+        setTitle(R.string.expresionesTitle);
 
         loadInfo();
 

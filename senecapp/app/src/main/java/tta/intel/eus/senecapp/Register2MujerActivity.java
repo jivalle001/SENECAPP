@@ -38,6 +38,8 @@ public class Register2MujerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2_mujer);
 
+        setTitle(R.string.registro2MenuTitle);
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         cambio = sharedPreferences.getBoolean("cambio",false);
         un = sharedPreferences.getString("username",null);

@@ -19,6 +19,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        setTitle(R.string.loginTitle);
         usuario = new Usuario();
     }
 
@@ -38,21 +40,32 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                if(username.matches(usuario.getUsuario()) && password.matches(usuario.getContraseña())){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("cambio",true);
-                    editor.putString("username",username);
-                    editor.commit();
-                    Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-                    startActivity(intent);
+                if(usuario != null && !username.isEmpty() && !password.isEmpty()){
+                    if(username.matches(usuario.getUsuario()) && password.matches(usuario.getContraseña())){
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("cambio",true);
+                        editor.putString("username",username);
+                        editor.commit();
+                        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),R.string.loginIncorrecto, Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    Toast.makeText(getApplicationContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
+                else {
+                    //Porque no se ha introducido uno o los dos campos
+                    if(username.isEmpty() || password.isEmpty())
+                    {
+                        Toast.makeText(getApplicationContext(), R.string.loginCompletar, Toast.LENGTH_SHORT).show();
+                    }
+                    //Porque el usuario introducido no está en la base de datos
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),R.string.loginIncorrecto, Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         }.execute();
-
-
-
     }
 }

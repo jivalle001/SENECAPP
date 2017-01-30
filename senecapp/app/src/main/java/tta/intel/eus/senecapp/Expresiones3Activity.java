@@ -30,6 +30,8 @@ public class Expresiones3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones3);
 
+        setTitle(R.string.expresionesTitle);
+
         loadInfo();
     }
 
@@ -102,7 +104,7 @@ public class Expresiones3Activity extends AppCompatActivity {
             button.setVisibility(View.VISIBLE);
             if(num == expresiones.getTotalCompras()-1)
             {
-                button.setText("FIN");
+                button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -126,6 +128,8 @@ public class Expresiones3Activity extends AppCompatActivity {
         ViewGroup layout = (ViewGroup)findViewById(R.id.expresion3_layout);
         layout.removeView(view);
         setContentView(R.layout.activity_expresiones3);
+
+        setTitle(R.string.expresionesTitle);
 
         loadInfo();
 

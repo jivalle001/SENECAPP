@@ -51,16 +51,6 @@ public class Data {
             json.put("usuario",usuario.getUsuario());
             JSONArray array = new JSONArray();
             return json;
-            /*for (Test.Choice choice : test.getChoices()){
-                JSONObject item = new JSONObject();
-                item.put("id",choice.getId());
-                item.put("wording",choice.getAnswer());
-                item.put("correct",choice.isCorrect());
-                item.put("advise",choice.getAdvise());
-                item.put("mime",choice.getMime());
-                array.put(item);
-            }
-            json.put("choices",array);*/
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -97,7 +87,7 @@ public class Data {
                 pareja.setPair1(pair1);
                 pareja.setPair2(pair2);
                 pareja.setPair3(pair3);
-                parejas.getBoard().add(pareja);//SALTA UNA EXCEPCIÓN!!!!
+                parejas.getBoard().add(pareja);
             }
             return parejas;
         } catch (JSONException e) {

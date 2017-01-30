@@ -11,6 +11,8 @@ public class ExpresionesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expresiones);
+
+        setTitle(R.string.expresionesTitle);
     }
 
     public void expresiones1(View view){

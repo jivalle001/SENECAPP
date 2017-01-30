@@ -35,6 +35,8 @@ public class Juego2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego2);
 
+        setTitle(R.string.juego2Title);
+
         loadInfo();
     }
 
@@ -107,12 +109,12 @@ public class Juego2Activity extends AppCompatActivity {
         if(selected!=correct) {
             num++;
             group.getChildAt(selected).setBackgroundColor(Color.RED);
-            Toast.makeText(getApplicationContext(),"¡Has fallado!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.fallo,Toast.LENGTH_SHORT).show();
             findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
             if(num==tests.getTotal())
             {
                 Button button = (Button) findViewById(R.id.button_next_test);
-                button.setText("FIN");
+                button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -125,12 +127,12 @@ public class Juego2Activity extends AppCompatActivity {
         }
         else {
             num++;
-            Toast.makeText(getApplicationContext(),"¡Correcto!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.correcto,Toast.LENGTH_SHORT).show();
             findViewById(R.id.button_next_test).setVisibility(View.VISIBLE);
             if(num==tests.getTotal())
             {
                 Button button = (Button) findViewById(R.id.button_next_test);
-                button.setText("FIN");
+                button.setText(R.string.fin);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -144,6 +146,9 @@ public class Juego2Activity extends AppCompatActivity {
 
     public void nextTest(View view){
         setContentView(R.layout.activity_juego2);
+
+        setTitle(R.string.juego2Title);
+
         loadInfo();
     }
 

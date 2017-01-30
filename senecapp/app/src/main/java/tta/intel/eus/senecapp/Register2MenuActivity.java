@@ -17,7 +17,6 @@ import java.net.URL;
 
 public class Register2MenuActivity extends AppCompatActivity {
 
-    //String urlstrHombre = "https://dl.dropboxusercontent.com/s/mpe7n1ay606uhzg/chico1.jpg?dl=0";
     URL url1;
     URL url2;
     Bitmap bmp1;
@@ -29,6 +28,9 @@ public class Register2MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2_menu);
+
+        setTitle(R.string.registro2MenuTitle);
+
         final ImageView imageView1 = (ImageView)findViewById(R.id.hombre);
         final ImageView imageView2 = (ImageView)findViewById(R.id.mujer);
 
