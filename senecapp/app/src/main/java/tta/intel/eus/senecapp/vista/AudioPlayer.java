@@ -1,4 +1,4 @@
-package tta.intel.eus.senecapp.modelo;
+package tta.intel.eus.senecapp.vista;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;

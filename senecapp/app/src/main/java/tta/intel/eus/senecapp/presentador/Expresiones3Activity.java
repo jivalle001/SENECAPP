@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import tta.intel.eus.senecapp.modelo.AudioPlayer;
+import tta.intel.eus.senecapp.vista.AudioPlayer;
 import tta.intel.eus.senecapp.modelo.Data;
 import tta.intel.eus.senecapp.R;
 import tta.intel.eus.senecapp.modelo.RestClient;
